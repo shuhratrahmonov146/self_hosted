@@ -1,0 +1,17 @@
+name: Self-hosted test
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: self-hosted
+
+    steps:
+      - name: Confirm runner
+        run: |
+          echo "This job is running on:"
+          hostname
+          ip a
+          uname -a
